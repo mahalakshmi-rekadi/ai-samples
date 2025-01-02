@@ -396,13 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-
-# AZD
-.[aA]zure/
-
-# App settings
-
-**/appsettings.local.json
-
-# Data
-**/src/chat/CustomerSupport/data/manual-chunks.json
+PowerThreadPool.psd
