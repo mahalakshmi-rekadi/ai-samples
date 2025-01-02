@@ -1,0 +1,17 @@
+name: test
+
+on:
+    workflow_dispatch:
+
+jobs:
+  tests-and-reports:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.111
+      - name: Run Tests and Generate TRX Report
+        run: dotnet test UnitTest/UnitTest.csproj --logger "trx;LogFileName=test-results.trx" --collect:"XPlat Code Coverage"
